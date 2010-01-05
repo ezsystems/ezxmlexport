@@ -1,0 +1,29 @@
+.ftptestok
+{
+    background-color:green;
+    background-image:url(../images/inputbutton-attribute-bg.gif);
+    background-position:center top;
+    background-repeat:repeat-x;
+    border-color:#FFFFFF rgb(47, 71, 95) rgb(47, 71, 95) rgb(255, 255, 255);
+    border-style:solid;
+    border-width:2px;
+    color:#FFFFFF;
+    font-size:0.9em;
+    font-weight:normal;
+    padding:0em 0.25em;
+}
+
+.ftptestko
+{
+    background-color:red;
+    background-image:url(../images/inputbutton-attribute-bg.gif);
+    background-position:center top;
+    background-repeat:repeat-x;
+    border-color:#FFFFFF rgb(47, 71, 95) rgb(47, 71, 95) rgb(255, 255, 255);
+    border-style:solid;
+    border-width:2px;
+    color:#FFFFFF;
+    font-size:0.9em;
+    font-weight:normal;
+    padding:0em 0.25em;
+}

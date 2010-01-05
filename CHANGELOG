@@ -1,0 +1,19 @@
+Changes from ezxmlexport1.0-alpha1 to ezxmlexport1.0-alpha2
+
+*Bugfixes:
+- Fixed bug #4148: "Add a customer" does not work
+- Fixed bug #4166: Valeur du champ "Every" perdu
+- Fixed bug #4167: Valeurs des champs d'édition d'un export perdues
+- Fixed bug #4180: Le calendrier ne s'affiche pas correctement
+
+Changes from ezxmlexport1.0-alpha1 to ezxmlexport1.0-alpha3
+- Fixed bug #4210 : Problème avec les accents dans le XSLT
+- Fixed bug #4213 : Error with the ezimage datatype 
+- Fixed bug #4208 : location missing in the xml 
+- Fixed bug #4206 : les XML relations objs n'ont pas été exportés 
+- Fixed bug #4209 : Le résultat de la transformation XSLT n'est pas stockée 
+- Fixed bug #4186 : Export crashes when exporting a lot of content objects 
+- Fixed bug #4192 : Recurrence value is always zero and forces to choose an EndDate 
+- Fixed bug #4204 : erreur sur le calcul de la fréquence de l'excution d'export 
+- Fixed bug #4205 : Boutton "Show content that will be exported" renvois fatal error 
+- Fixed bug #4183 : Les information FTP doivent être facultatives 

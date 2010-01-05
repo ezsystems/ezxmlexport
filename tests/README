@@ -1,0 +1,10 @@
+Important:
+
+In order to get the FTP tests working you need
+to configure an FTP server with the following login credentials :
+
+login: jerome
+pass: publish
+
+Please refer to extension/ezxmlexport/test/ezxmlexportftpfilehandler_test.php on line
+14 for more informations.
