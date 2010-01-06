@@ -1,0 +1,355 @@
+<?php
+// This array contains the database schema
+$schema = array (
+  'ezxmlexport_available_contentclass_attributes' => 
+  array (
+    'name' => 'ezxmlexport_available_contentclass_attributes',
+    'fields' => 
+    array (
+      'contentclass_attribute_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'contentclass_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'contentclass_attribute_id' => 
+      array (
+        'type' => 'unique',
+        'fields' => 
+        array (
+          0 => 'contentclass_attribute_id',
+        ),
+      ),
+      'fk_contentclassattribute_id' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'contentclass_id',
+        ),
+      ),
+    ),
+  ),
+  'ezxmlexport_available_contentclasses' => 
+  array (
+    'name' => 'ezxmlexport_available_contentclasses',
+    'fields' => 
+    array (
+      'contentclass_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'contentclass_id' => 
+      array (
+        'type' => 'unique',
+        'fields' => 
+        array (
+          0 => 'contentclass_id',
+        ),
+      ),
+    ),
+  ),
+  'ezxmlexport_customers' => 
+  array (
+    'name' => 'ezxmlexport_customers',
+    'fields' => 
+    array (
+      'ftp_target' => 
+      array (
+        'type' => 'text',
+        'not_null' => '1',
+        'default' => false,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'name' => 
+      array (
+        'length' => 200,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'slicing_mode' => 
+      array (
+        'type' => 'enum',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+    ),
+  ),
+  'ezxmlexport_export_object_log' => 
+  array (
+    'name' => 'ezxmlexport_export_object_log',
+    'fields' => 
+    array (
+      'contentobject_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'process_log_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'FK_process_log_id' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'process_log_id',
+        ),
+      ),
+    ),
+  ),
+  'ezxmlexport_exports' => 
+  array (
+    'name' => 'ezxmlexport_exports',
+    'fields' => 
+    array (
+      'compression' => 
+      array (
+        'length' => 1,
+        'type' => 'tinyint',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'customer_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'description' => 
+      array (
+        'length' => 200,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'end_date' => 
+      array (
+        'length' => 15,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '0',
+      ),
+      'export_from_last' => 
+      array (
+        'length' => 1,
+        'type' => 'tinyint',
+        'not_null' => '1',
+        'default' => '0',
+      ),
+      'export_hidden_nodes' => 
+      array (
+        'length' => 1,
+        'type' => 'tinyint',
+        'not_null' => '1',
+        'default' => '0',
+      ),
+      'export_limit' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'export_schedule' => 
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'ftp_target' => 
+      array (
+        'length' => 200,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'name' => 
+      array (
+        'length' => 200,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'related_object_handling' => 
+      array (
+        'length' => 1,
+        'type' => 'tinyint',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'slicing_mode' => 
+      array (
+        'type' => 'enum',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'sources' => 
+      array (
+        'type' => 'text',
+        'not_null' => '1',
+        'default' => false,
+      ),
+      'start_date' => 
+      array (
+        'length' => 15,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '0',
+      ),
+      'xslt_file' => 
+      array (
+        'length' => 70,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'fk_customers' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'customer_id',
+        ),
+      ),
+    ),
+  ),
+  'ezxmlexport_process_logs' => 
+  array (
+    'name' => 'ezxmlexport_process_logs',
+    'fields' => 
+    array (
+      'end_date' => 
+      array (
+        'length' => 10,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'end_transfert_date' => 
+      array (
+        'length' => 10,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'export_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'start_date' => 
+      array (
+        'length' => 10,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'start_transfert_date' => 
+      array (
+        'length' => 10,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'status' => 
+      array (
+        'length' => 3,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+    ),
+  ),
+  '_info' => 
+  array (
+    'format' => 'generic',
+  ),
+);
+// This array contains the database data
+$data = array (
+  '_info' => 
+  array (
+    'format' => 'generic',
+  ),
+);
+
+?>
