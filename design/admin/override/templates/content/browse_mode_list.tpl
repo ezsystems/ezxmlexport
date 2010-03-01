@@ -31,7 +31,7 @@
                            cond( is_set( $browse.permission.contentclass_id ),
                                  fetch( content, access, hash( access,          $browse.permission.access,
                                                                contentobject,   $Nodes.item,
-                                                               contentclass_id, $browse.permission.contentclass_id ) ),
+                                                               contentclass_id, $browse.permission.contentclass_id.0 ) ),
                                  fetch( content, access, hash( access,          $browse.permission.access,
                                                                contentobject,   $Nodes.item ) ) ) ),
                            $browse.ignore_nodes_select|contains( $Nodes.item.node_id )|not,
@@ -99,4 +99,3 @@
         {/if}
     {/foreach}
 {/if}
-

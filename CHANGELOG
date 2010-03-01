@@ -1,3 +1,8 @@
+Changes from ezxmlexport-1.0.0 to ezxmlexport-1.1
+
+Bugfixes:
+- Fixed bug #16107 : eZXMLExport doesn't play well with 'move selected nodes' option
+
 Changes from ezxmlexport1.0-alpha1 to ezxmlexport1.0-alpha2
 
 *Bugfixes:
