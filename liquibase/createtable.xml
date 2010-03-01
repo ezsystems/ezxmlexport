@@ -7,117 +7,40 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
     <changeSet id="1" author="">
-        <createTable tableName="ezxmlexport_available_contentclass_attributes">
-            <column name="contentclass_attribute_id" type="java.sql.Types.INT">
-                <constraints unique="true" nullable="false"/>
-            </column>
-
-            <column name="contentclass_id" type="java.sql.Types.INT">
-                <constraints unique="false" nullable="false"/>
-            </column>
-        </createTable>
-
-        <createTable tableName="ezxmlexport_available_contentclasses">
-            <column name="contentclass_id" type="java.sql.Types.INT">
-                <constraints unique="true" nullable="false"/>
-            </column>
-        </createTable>
-
-        <createTable tableName="ezxmlexport_customers">
-            <column autoIncrement="true" name="id" type="java.sql.Types.INT">
+        <createTable tableName="ezevent">
+            <column name="id" type="java.sql.Types.INT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="VARCHAR( 200 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="ftp_target" type="java.sql.Types.LONGVARCHAR">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="slicing_mode" type="enum-1.n">
-                <constraints unique="false" nullable="false"/>
-            </column>
-        </createTable>
 
-        <createTable tableName="ezxmlexport_exports">
-            <column autoIncrement="true" name="id" type="java.sql.Types.INT">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="customer_id" type="java.sql.Types.INT">
+            <column name="parent_event_id" type="java.sql.Types.INT">
                 <constraints unique="false" nullable="false"/>
             </column>
-            <column name="name" type="VARCHAR( 200 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="description" type="VARCHAR( 200 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="sources" type="java.sql.Types.LONGVARCHAR">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="ftp_target" type="VARCHAR( 200 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="slicing_mode" type="enum-1.n">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="start_date" type="VARCHAR( 15 )" defaultValue="0">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="end_date" type="VARCHAR( 15 )" defaultValue="0">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="export_schedule" type="VARCHAR( 100 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="export_limit" type="java.sql.Types.INT">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="export_from_last" type="java.sql.Types.TINYINT" defaultValue="0">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="compression" type="java.sql.Types.TINYINT">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="related_object_handling" type="java.sql.Types.TINYINT">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="xslt_file" type="VARCHAR( 70 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="export_hidden_nodes" type="java.sql.Types.TINYINT" defaultValue="0">
-                <constraints unique="false" nullable="false"/>
-            </column>
-        </createTable>
 
-        <createTable tableName="ezxmlexport_process_logs">
-            <column autoIncrement="true" name="id" type="java.sql.Types.INT">
-                <constraints primaryKey="true" nullable="false"/>
+            <column name="contentobject_attribute_id" type="java.sql.Types.INT">
+                <constraints primaryKey="true" unique="false" nullable="false"/>
             </column>
-            <column name="export_id" type="java.sql.Types.INT">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="start_date" type="VARCHAR( 10 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="end_date" type="VARCHAR( 10 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="start_transfert_date" type="VARCHAR( 10 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="end_transfert_date" type="VARCHAR( 10 )">
-                <constraints unique="false" nullable="false"/>
-            </column>
-            <column name="status" type="java.sql.Types.INT">
-                <constraints unique="false" nullable="false"/>
-            </column>
-        </createTable>
 
-        <createTable tableName="ezxmlexport_export_object_log">
-            <column name="process_log_id" type="java.sql.Types.INT">
-                <constraints nullable="false" foreignKeyName="FK_process_log_id" references="ezxmlexport_process_logs( id ) " deleteCascade="true"/>
+            <column name="version" type="java.sql.Types.INT">
+                <constraints primaryKey="true" unique="false" nullable="false"/>
             </column>
-            <column name="contentobject_id" type="java.sql.Types.INT">
+
+            <column name="start_date" type="java.sql.Types.INT">
+                <constraints unique="false" nullable="false"/>
+            </column>
+
+            <column name="end_date" type="java.sql.Types.INT">
+                <constraints unique="false" nullable="false"/>
+            </column>
+
+            <column name="event_type" type="java.sql.Types.TINYINT" defaultValue="14">
+                <constraints unique="false" nullable="false"/>
+            </column>
+
+            <column name="is_parent" type="java.sql.Types.TINYINT" defaultValue="0">
+                <constraints unique="false" nullable="false"/>
+            </column>
+
+            <column name="is_temp" type="java.sql.Types.TINYINT" defaultValue="0">
                 <constraints unique="false" nullable="false"/>
             </column>
         </createTable>
@@ -131,5 +54,16 @@
             <replace replace="enum-1.n" with="CHAR( 1 ) CHECK( slicing_mode IN ('1', 'n' ))"/>
             <replace replace="TINYINT" with="SMALLINT"/>
         </modifySql>
+    </changeSet>
+
+    <changeSet id="2" author="">
+        <createIndex tableName="ezevent" indexName="contentobject_attribute_id">
+            <column name="contentobject_attribute_id"/>
+            <column name="version"/>
+        </createIndex>
+
+        <createIndex tableName="ezevent" indexName="parent_event_id">
+            <column name="parent_event_id"/>
+        </createIndex>
     </changeSet>
 </databaseChangeLog>
