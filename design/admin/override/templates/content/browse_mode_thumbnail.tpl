@@ -27,12 +27,13 @@
                  In the future this should be replaced with a  new template operator that checks
                  one array against another and returns true if elements in the first
                  exists in the other *}
+
         {let ignore_nodes_merge=merge( $browse.ignore_nodes_select_subtree, $Nodes.item.path_array )}
         {section show=and( or( $browse.permission|not,
                            cond( is_set( $browse.permission.contentclass_id ),
                                  fetch( content, access, hash( access,          $browse.permission.access,
                                                                contentobject,   $Nodes.item,
-                                                               contentclass_id, $browse.permission.contentclass_id.0 ) ),
+                                                               contentclass_id, cond( $browse.permission.contentclass_id|is_array(), $browse.permission.contentclass_id.0, $browse.permission.contentclass_id ) ) ),
                                  fetch( content, access, hash( access,          $browse.permission.access,
                                                                contentobject,   $Nodes.item ) ) ) ),
                            eq( $ignore_nodes_merge|count,
