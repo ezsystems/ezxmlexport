@@ -27,11 +27,11 @@ CREATE TABLE ezxport_exports (
   end_date                VARCHAR(15)    DEFAULT '0'    NOT NULL,
   export_schedule         VARCHAR(100)    NOT NULL,
   export_limit            INT    NOT NULL,
-  export_from_last        TINYINT    DEFAULT '0'    NOT NULL,
-  compression             TINYINT    NOT NULL,
-  related_object_handling TINYINT    NOT NULL,
+  export_from_last        SMALLINT    DEFAULT '0'    NOT NULL,
+  compression             SMALLINT    NOT NULL,
+  related_object_handling SMALLINT    NOT NULL,
   xslt_file               VARCHAR(70)    NOT NULL,
-  export_hidden_nodes     TINYINT    DEFAULT '0'    NOT NULL,
+  export_hidden_nodes     SMALLINT    DEFAULT '0'    NOT NULL,
   CONSTRAINT cons_slicing_mode CHECK ( slicing_mode IN ('1','n') ),
   CONSTRAINT pk_ezxport_exports PRIMARY KEY ( id ));
 
