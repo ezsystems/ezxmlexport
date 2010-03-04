@@ -132,9 +132,9 @@
             <replace replace="TINYINT" with="SMALLINT"/>
         </modifySql>
 
-	<modifySql dbms="oracle">
+    <modifySql dbms="oracle">
             <replace replace="enum-1.n" with="CHAR( 1 ), CONSTRAINT cons_slicing_mode CHECK (slicing_mode IN ('1', 'n'))"/>
-	</modifySql>
+    </modifySql>
     </changeSet>
 
     <changeSet id="2" author="">
@@ -142,29 +142,29 @@
         <createSequence sequenceName="seq_ezxmlexport_exports"/>
         <createSequence sequenceName="seq_ezxmlexport_process_logs"/>
 
-	<createProcedure>
-	    CREATE OR REPLACE TRIGGER ezxmlexport_customers_tr
-	    BEFORE INSERT ON ezxmlexport_customers FOR EACH ROW WHEN (new.id IS NULL)
-	    BEGIN
-	      SELECT seq_ezxmlexport_customers.nextval INTO :new.id FROM dual;
-	    END;
-	</createProcedure>
+    <createProcedure>
+        CREATE OR REPLACE TRIGGER ezxmlexport_customers_tr
+        BEFORE INSERT ON ezxmlexport_customers FOR EACH ROW WHEN (new.id IS NULL)
+        BEGIN
+          SELECT seq_ezxmlexport_customers.nextval INTO :new.id FROM dual;
+        END;
+    </createProcedure>
 
-	<createProcedure>
-	    CREATE OR REPLACE TRIGGER ezxmlexport_exports_tr
-	    BEFORE INSERT ON ezxmlexport_exports FOR EACH ROW WHEN (new.id IS NULL)
-	    BEGIN
-	      SELECT seq_ezxmlexport_exports.nextval INTO :new.id FROM dual;
-	    END;
-	</createProcedure>
+    <createProcedure>
+        CREATE OR REPLACE TRIGGER ezxmlexport_exports_tr
+        BEFORE INSERT ON ezxmlexport_exports FOR EACH ROW WHEN (new.id IS NULL)
+        BEGIN
+          SELECT seq_ezxmlexport_exports.nextval INTO :new.id FROM dual;
+        END;
+    </createProcedure>
 
-	<createProcedure>
-	    CREATE OR REPLACE TRIGGER ezxmlexport_process_logs_tr
-	    BEFORE INSERT ON ezxmlexport_process_logs FOR EACH ROW WHEN (new.id IS NULL)
-	    BEGIN
-	      SELECT seq_ezxmlexport_process_logs.nextval INTO :new.id FROM dual;
-	    END;
-	</createProcedure>
+    <createProcedure>
+        CREATE OR REPLACE TRIGGER ezxmlexport_process_logs_tr
+        BEFORE INSERT ON ezxmlexport_process_logs FOR EACH ROW WHEN (new.id IS NULL)
+        BEGIN
+          SELECT seq_ezxmlexport_process_logs.nextval INTO :new.id FROM dual;
+        END;
+    </createProcedure>
 
     </changeSet>
 </databaseChangeLog>
