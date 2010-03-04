@@ -68,7 +68,7 @@ class eZXMLExportProcessLog extends eZPersistentObject
                       'increment_key' => 'id',
                       'class_name' => 'eZXMLExportProcessLog',
                       'sort' => array(),
-                      'name' => 'ezxmlexport_process_logs' );
+                      'name' => 'ezxport_process_logs' );
         return $def;
     }
 
@@ -95,7 +95,7 @@ class eZXMLExportProcessLog extends eZPersistentObject
     public function setObjectID( $contentObjectID )
     {
         $db = eZDB::instance();
-        $sql = 'INSERT INTO ezxmlexport_export_object_log ( process_log_id , contentobject_id )
+        $sql = 'INSERT INTO ezxport_export_object_log ( process_log_id , contentobject_id )
                 VALUES( ' . $db->escapeString( $this->ID ) . ', '
                           . $db->escapeString( $contentObjectID ) . ')';
 

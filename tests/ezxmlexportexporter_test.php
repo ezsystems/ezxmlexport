@@ -54,6 +54,8 @@ class eZXMLExportExporterTest extends ezpDatabaseTestCase
         @unlink( eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.xml' );
         @unlink( eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.tar.gz' );
         @rmdir(  eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $eZXMLExporter->CleanExportName );
+
+        parent::tearDown();
     }
 
     public function testeZXMLExportExporter()
@@ -80,7 +82,7 @@ class eZXMLExportExporterTest extends ezpDatabaseTestCase
         $this->eZXMLExporter->exportStart();
 
         $db = eZDB::instance();
-        $sql= 'SELECT * FROM ezxmlexport_process_logs WHERE export_id = ' . self::EXPORT_ID;
+        $sql= 'SELECT * FROM ezxport_process_logs WHERE export_id = ' . self::EXPORT_ID;
         $rows = $db->arrayQuery( $sql );
         $this->assertGreaterThan( 0, count( $rows ) );
 

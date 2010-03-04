@@ -90,7 +90,7 @@ class eZXMLExportExports extends eZPersistentObject
                       'increment_key' => 'id',
                       'class_name' => 'eZXMLExportExports',
                       'sort' => array(),
-                      'name' => 'ezxmlexport_exports' );
+                      'name' => 'ezxport_exports' );
         return $def;
     }
 
@@ -289,8 +289,8 @@ class eZXMLExportExports extends eZPersistentObject
                        logs.start_date,
                        logs.status
 
-                FROM ezxmlexport_exports AS exports,
-                     ezxmlexport_process_logs as logs
+                FROM ezxport_exports AS exports,
+                     ezxport_process_logs as logs
 
                 WHERE logs.export_id = exports.id
                    AND status <= ' . (int)$status;

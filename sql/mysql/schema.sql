@@ -1,15 +1,15 @@
-CREATE TABLE ezxmlexport_available_contentclass_attributes (
+CREATE TABLE ezxport_available_cclass_attr (
   contentclass_attribute_id int(11) NOT NULL,
   contentclass_id int(11) NOT NULL,
   UNIQUE KEY contentclass_attribute_id (contentclass_attribute_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE ezxmlexport_available_contentclasses (
+CREATE TABLE ezxport_available_cclasses (
   contentclass_id int(11) NOT NULL,
   UNIQUE KEY contentclass_id (contentclass_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE ezxmlexport_customers (
+CREATE TABLE ezxport_customers (
   id int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   ftp_target text NOT NULL,
@@ -17,13 +17,13 @@ CREATE TABLE ezxmlexport_customers (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE ezxmlexport_export_object_log (
+CREATE TABLE ezxport_export_object_log (
   process_log_id int(11) NOT NULL,
   contentobject_id int(11) NOT NULL,
   KEY FK_process_log_id (process_log_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE ezxmlexport_exports (
+CREATE TABLE ezxport_exports (
   id int(11) NOT NULL AUTO_INCREMENT,
   customer_id int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE ezxmlexport_exports (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE ezxmlexport_process_logs (
+CREATE TABLE ezxport_process_logs (
   id int(11) NOT NULL AUTO_INCREMENT,
   export_id int(11) NOT NULL,
   start_date varchar(10) NOT NULL,
@@ -54,5 +54,5 @@ CREATE TABLE ezxmlexport_process_logs (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE `ezxmlexport_export_object_log`
-  ADD CONSTRAINT FK_process_log_id FOREIGN KEY (process_log_id) REFERENCES ezxmlexport_process_logs (id) ON DELETE CASCADE;
+ALTER TABLE `ezxport_export_object_log`
+  ADD CONSTRAINT FK_process_log_id FOREIGN KEY (process_log_id) REFERENCES ezxport_process_logs (id) ON DELETE CASCADE;

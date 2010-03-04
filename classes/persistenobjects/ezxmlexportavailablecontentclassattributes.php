@@ -19,7 +19,7 @@ class eZXMLExportAvailableContentClassAttributes extends eZPersistentObject
                       'function_attributes' => array(),
                       'class_name' => 'eZXMLExportAvailableContentClassAttributes',
                       'sort' => array(),
-                      'name' => 'ezxmlexport_available_contentclass_attributes' );
+                      'name' => 'ezxport_available_cclass_attr' );
         return $def;
     }
 

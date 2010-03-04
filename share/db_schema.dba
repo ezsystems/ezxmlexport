@@ -1,9 +1,9 @@
 <?php
 // This array contains the database schema
 $schema = array (
-  'ezxmlexport_available_contentclass_attributes' => 
+  'ezxport_available_cclass_attr' => 
   array (
-    'name' => 'ezxmlexport_available_contentclass_attributes',
+    'name' => 'ezxport_available_cclass_attr',
     'fields' => 
     array (
       'contentclass_attribute_id' => 
@@ -41,9 +41,9 @@ $schema = array (
       ),
     ),
   ),
-  'ezxmlexport_available_contentclasses' => 
+  'ezxport_available_cclasses' => 
   array (
-    'name' => 'ezxmlexport_available_contentclasses',
+    'name' => 'ezxport_available_cclasses',
     'fields' => 
     array (
       'contentclass_id' => 
@@ -66,9 +66,9 @@ $schema = array (
       ),
     ),
   ),
-  'ezxmlexport_customers' => 
+  'ezxport_customers' => 
   array (
-    'name' => 'ezxmlexport_customers',
+    'name' => 'ezxport_customers',
     'fields' => 
     array (
       'ftp_target' => 
@@ -108,9 +108,9 @@ $schema = array (
       ),
     ),
   ),
-  'ezxmlexport_export_object_log' => 
+  'ezxport_export_object_log' => 
   array (
-    'name' => 'ezxmlexport_export_object_log',
+    'name' => 'ezxport_export_object_log',
     'fields' => 
     array (
       'contentobject_id' => 
@@ -140,9 +140,9 @@ $schema = array (
       ),
     ),
   ),
-  'ezxmlexport_exports' => 
+  'ezxport_exports' => 
   array (
-    'name' => 'ezxmlexport_exports',
+    'name' => 'ezxport_exports',
     'fields' => 
     array (
       'compression' => 
@@ -274,9 +274,9 @@ $schema = array (
       ),
     ),
   ),
-  'ezxmlexport_process_logs' => 
+  'ezxport_process_logs' => 
   array (
-    'name' => 'ezxmlexport_process_logs',
+    'name' => 'ezxport_process_logs',
     'fields' => 
     array (
       'end_date' => 

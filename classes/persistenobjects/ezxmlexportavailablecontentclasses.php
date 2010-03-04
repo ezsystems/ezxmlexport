@@ -15,7 +15,7 @@ class eZXMLExportAvailableContentClasses extends eZPersistentObject
                       'function_attributes' => array(),
                       'class_name' => 'eZXMLExportAvailableContentClasses',
                       'sort' => array(),
-                      'name' => 'ezxmlexport_available_contentclasses' );
+                      'name' => 'ezxport_available_cclasses' );
         return $def;
     }
 
@@ -23,17 +23,17 @@ class eZXMLExportAvailableContentClasses extends eZPersistentObject
     {
         $db = eZDB::instance();
 
-        $sql = 'SELECT ezxmlexport_available_contentclasses.contentclass_id,
-                       ezxmlexport_available_contentclass_attributes.contentclass_attribute_id
-                FROM ezxmlexport_available_contentclasses,
-                     ezxmlexport_available_contentclass_attributes';
+        $sql = 'SELECT ezxport_available_cclasses.contentclass_id,
+                       ezxport_available_cclass_attr.contentclass_attribute_id
+                FROM ezxport_available_cclasses,
+                     ezxport_available_cclass_attr';
 
         $whereClause = '';
 
         if( $classID != null )
         {
-            $whereClause = ' WHERE ezxmlexport_available_contentclasses.contentclass_id = ezxmlexport_available_contentclass_attributes.contentclass_id
-                               AND ezxmlexport_available_contentclasses.contentclass_id = ' . $db->escapeString( $classID );
+            $whereClause = ' WHERE ezxport_available_cclasses.contentclass_id = ezxport_available_cclass_attr.contentclass_id
+                               AND ezxport_available_cclasses.contentclass_id = ' . $db->escapeString( $classID );
         }
 
         $sql .= $whereClause;

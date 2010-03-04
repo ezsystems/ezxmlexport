@@ -7,7 +7,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
     <changeSet id="1" author="">
-        <createTable tableName="ezxmlexport_available_contentclass_attributes">
+        <createTable tableName="ezxport_available_cclass_attr">
             <column name="contentclass_attribute_id" type="java.sql.Types.INT">
                 <constraints unique="true" nullable="false"/>
             </column>
@@ -17,13 +17,13 @@
             </column>
         </createTable>
 
-        <createTable tableName="ezxmlexport_available_contentclasses">
+        <createTable tableName="ezxport_available_cclasses">
             <column name="contentclass_id" type="java.sql.Types.INT">
                 <constraints unique="true" nullable="false"/>
             </column>
         </createTable>
 
-        <createTable tableName="ezxmlexport_customers">
+        <createTable tableName="ezxport_customers">
             <column autoIncrement="true" name="id" type="java.sql.Types.INT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -38,7 +38,7 @@
             </column>
         </createTable>
 
-        <createTable tableName="ezxmlexport_exports">
+        <createTable tableName="ezxport_exports">
             <column autoIncrement="true" name="id" type="java.sql.Types.INT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -89,7 +89,7 @@
             </column>
         </createTable>
 
-        <createTable tableName="ezxmlexport_process_logs">
+        <createTable tableName="ezxport_process_logs">
             <column autoIncrement="true" name="id" type="java.sql.Types.INT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -113,9 +113,9 @@
             </column>
         </createTable>
 
-        <createTable tableName="ezxmlexport_export_object_log">
+        <createTable tableName="ezxport_export_object_log">
             <column name="process_log_id" type="java.sql.Types.INT">
-                <constraints nullable="false" foreignKeyName="FK_process_log_id" references="ezxmlexport_process_logs( id ) " deleteCascade="true"/>
+                <constraints nullable="false" foreignKeyName="FK_process_log_id" references="ezxport_process_logs( id ) " deleteCascade="true"/>
             </column>
             <column name="contentobject_id" type="java.sql.Types.INT">
                 <constraints unique="false" nullable="false"/>
@@ -138,31 +138,31 @@
     </changeSet>
 
     <changeSet id="2" author="">
-        <createSequence sequenceName="seq_ezxmlexport_customers"/>
-        <createSequence sequenceName="seq_ezxmlexport_exports"/>
-        <createSequence sequenceName="seq_ezxmlexport_process_logs"/>
+        <createSequence sequenceName="seq_ezxport_customers"/>
+        <createSequence sequenceName="seq_ezxport_exports"/>
+        <createSequence sequenceName="seq_ezxport_process_logs"/>
 
     <createProcedure>
-        CREATE OR REPLACE TRIGGER ezxmlexport_customers_tr
-        BEFORE INSERT ON ezxmlexport_customers FOR EACH ROW WHEN (new.id IS NULL)
+        CREATE OR REPLACE TRIGGER ezxport_customers_tr
+        BEFORE INSERT ON ezxport_customers FOR EACH ROW WHEN (new.id IS NULL)
         BEGIN
-          SELECT seq_ezxmlexport_customers.nextval INTO :new.id FROM dual;
+          SELECT seq_ezxport_customers.nextval INTO :new.id FROM dual;
         END;
     </createProcedure>
 
     <createProcedure>
-        CREATE OR REPLACE TRIGGER ezxmlexport_exports_tr
-        BEFORE INSERT ON ezxmlexport_exports FOR EACH ROW WHEN (new.id IS NULL)
+        CREATE OR REPLACE TRIGGER ezxport_exports_tr
+        BEFORE INSERT ON ezxport_exports FOR EACH ROW WHEN (new.id IS NULL)
         BEGIN
-          SELECT seq_ezxmlexport_exports.nextval INTO :new.id FROM dual;
+          SELECT seq_ezxport_exports.nextval INTO :new.id FROM dual;
         END;
     </createProcedure>
 
     <createProcedure>
-        CREATE OR REPLACE TRIGGER ezxmlexport_process_logs_tr
-        BEFORE INSERT ON ezxmlexport_process_logs FOR EACH ROW WHEN (new.id IS NULL)
+        CREATE OR REPLACE TRIGGER ezxport_process_logs_tr
+        BEFORE INSERT ON ezxport_process_logs FOR EACH ROW WHEN (new.id IS NULL)
         BEGIN
-          SELECT seq_ezxmlexport_process_logs.nextval INTO :new.id FROM dual;
+          SELECT seq_ezxport_process_logs.nextval INTO :new.id FROM dual;
         END;
     </createProcedure>
 

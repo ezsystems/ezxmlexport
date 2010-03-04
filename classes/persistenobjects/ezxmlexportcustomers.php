@@ -31,7 +31,7 @@ class eZXMLExportCustomers extends eZPersistentObject
                       'increment_key' => 'id',
                       'class_name' => 'eZXMLExportCustomers',
                       'sort' => array(),
-                      'name' => 'ezxmlexport_customers' );
+                      'name' => 'ezxport_customers' );
         return $def;
     }
 
