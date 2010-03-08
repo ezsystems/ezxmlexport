@@ -1,3 +1,24 @@
+CREATE SEQUENCE ezxport_customers_s
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+CREATE SEQUENCE ezxport_exports_s
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+CREATE SEQUENCE ezxport_process_logs_s
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
 CREATE TABLE ezxport_available_cclass_attr (
   contentclass_attribute_id INT   NOT NULL,
   contentclass_id           INT   NOT NULL,
@@ -8,14 +29,14 @@ CREATE TABLE ezxport_available_cclasses (
     UNIQUE (contentclass_id ));
 
 CREATE TABLE ezxport_customers (
-  ID           SERIAL   NOT NULL,
+  ID           integer DEFAULT nextval('ezxport_customers_s'::text) NOT NULL,
   NAME         VARCHAR(200)   NOT NULL,
   ftp_target   TEXT   NOT NULL,
   slicing_mode CHAR(1)   CHECK ( slicing_mode IN ('1','n') )   NOT NULL,
   CONSTRAINT pk_ezxport_customers PRIMARY KEY ( id ));
 
 CREATE TABLE ezxport_exports (
-  ID                      SERIAL   NOT NULL,
+  ID                      integer DEFAULT nextval('ezxport_exports_s'::text) NOT NULL,
   customer_id             INT   NOT NULL,
   NAME                    VARCHAR(200)   NOT NULL,
   description             VARCHAR(200)   NOT NULL,
@@ -34,7 +55,7 @@ CREATE TABLE ezxport_exports (
   CONSTRAINT pk_ezxport_exports PRIMARY KEY ( id ));
 
 CREATE TABLE ezxport_process_logs (
-  ID                   SERIAL   NOT NULL,
+  ID                   integer DEFAULT nextval('ezxport_process_logs_s'::text)   NOT NULL,
   export_id            INT   NOT NULL,
   start_date           VARCHAR(10)   NOT NULL,
   end_date             VARCHAR(10)   NOT NULL,
@@ -47,3 +68,8 @@ CREATE TABLE ezxport_export_object_log (
   process_log_id   INT   NOT NULL,
   contentobject_id INT   NOT NULL,
   CONSTRAINT "FK_process_log_id" FOREIGN KEY ( process_log_id ) REFERENCES ezxport_process_logs(id) ON DELETE CASCADE);
+
+SELECT setval('ezxport_customers_s', max(id)) , 'ezxport_customers' as tablename FROM ezxport_customers;
+SELECT setval('ezxport_exports_s', max(id)) , 'ezxport_exports' as tablename FROM ezxport_exports;
+SELECT setval('ezxport_process_logs_s', max(id)) , 'ezxport_export_object_log' as tablename FROM ezxport_process_logs;
+
