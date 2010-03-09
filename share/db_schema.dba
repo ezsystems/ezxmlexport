@@ -92,7 +92,7 @@ $schema = array (
       'slicing_mode' => 
       array (
         'type' => 'char',
-        'lenght' => 1
+        'length' => 1,
         'not_null' => '1',
         'default' => '1',
       ),
