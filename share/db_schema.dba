@@ -149,7 +149,7 @@ $schema = array (
       'compression' => 
       array (
         'length' => 1,
-        'type' => 'tinyint',
+        'type' => 'int',
         'not_null' => '1',
         'default' => '0',
       ),
@@ -177,14 +177,14 @@ $schema = array (
       'export_from_last' => 
       array (
         'length' => 1,
-        'type' => 'tinyint',
+        'type' => 'int',
         'not_null' => '1',
         'default' => '0',
       ),
       'export_hidden_nodes' => 
       array (
         'length' => 1,
-        'type' => 'tinyint',
+        'type' => 'int',
         'not_null' => '1',
         'default' => '0',
       ),
@@ -224,9 +224,9 @@ $schema = array (
       'related_object_handling' => 
       array (
         'length' => 1,
-        'type' => 'tinyint',
+        'type' => 'int',
         'not_null' => '1',
-        'default' => '',
+        'default' => '0',
       ),
       'slicing_mode' => 
       array (
