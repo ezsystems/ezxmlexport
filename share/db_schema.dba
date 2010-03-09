@@ -151,7 +151,7 @@ $schema = array (
         'length' => 1,
         'type' => 'tinyint',
         'not_null' => '1',
-        'default' => '',
+        'default' => '0',
       ),
       'customer_id' => 
       array (
