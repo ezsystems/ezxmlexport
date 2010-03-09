@@ -32,7 +32,7 @@ CREATE TABLE ezxport_customers (
   ID           integer DEFAULT nextval('ezxport_customers_s'::text) NOT NULL,
   NAME         VARCHAR(200)   NOT NULL,
   ftp_target   TEXT   NOT NULL,
-  slicing_mode CHAR(1)   CHECK ( slicing_mode IN ('1','n') )   NOT NULL,
+  slicing_mode CHAR(1) DEFAULT '1' NOT NULL,
   CONSTRAINT pk_ezxport_customers PRIMARY KEY ( id ));
 
 CREATE TABLE ezxport_exports (
@@ -42,7 +42,7 @@ CREATE TABLE ezxport_exports (
   description             VARCHAR(200)   NOT NULL,
   sources                 TEXT   NOT NULL,
   ftp_target              VARCHAR(200)   NOT NULL,
-  slicing_mode            CHAR(1)   CHECK ( slicing_mode IN ('1','n') )   NOT NULL,
+  slicing_mode            CHAR(1) DEFAULT '1' NOT NULL,
   start_date              VARCHAR(15)   DEFAULT '0'   NOT NULL,
   end_date                VARCHAR(15)   DEFAULT '0'   NOT NULL,
   export_schedule         VARCHAR(100)   NOT NULL,
@@ -72,4 +72,3 @@ CREATE TABLE ezxport_export_object_log (
 SELECT setval('ezxport_customers_s', max(id)) , 'ezxport_customers' as tablename FROM ezxport_customers;
 SELECT setval('ezxport_exports_s', max(id)) , 'ezxport_exports' as tablename FROM ezxport_exports;
 SELECT setval('ezxport_process_logs_s', max(id)) , 'ezxport_export_object_log' as tablename FROM ezxport_process_logs;
-

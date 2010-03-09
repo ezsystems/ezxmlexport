@@ -13,7 +13,7 @@ CREATE TABLE ezxport_customers (
   id int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   ftp_target text NOT NULL,
-  slicing_mode enum('1','n') NOT NULL,
+  slicing_mode CHAR(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -30,7 +30,7 @@ CREATE TABLE ezxport_exports (
   description varchar(200) NOT NULL,
   sources text NOT NULL,
   ftp_target varchar(200) NOT NULL,
-  slicing_mode enum('1','n') NOT NULL,
+  slicing_mode CHAR(1) NOT NULL DEFAULT '1',
   start_date varchar(15) NOT NULL DEFAULT '0',
   end_date varchar(15) NOT NULL DEFAULT '0',
   export_schedule varchar(100) NOT NULL,

@@ -91,9 +91,10 @@ $schema = array (
       ),
       'slicing_mode' => 
       array (
-        'type' => 'enum',
+        'type' => 'char',
+        'lenght' => 1
         'not_null' => '1',
-        'default' => '',
+        'default' => '1',
       ),
     ),
     'indexes' => 
@@ -229,9 +230,10 @@ $schema = array (
       ),
       'slicing_mode' => 
       array (
-        'type' => 'enum',
+        'type' => 'char',
+        'length' => 1,
         'not_null' => '1',
-        'default' => '',
+        'default' => '1',
       ),
       'sources' => 
       array (
