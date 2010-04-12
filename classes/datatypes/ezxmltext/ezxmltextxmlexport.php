@@ -49,8 +49,12 @@ class eZXMLTextXMLExport extends eZXMLExportDatatype
         $attributeContents = $this->contentObjectAttribute->content();
 
         return "<![CDATA[\n"
-             . $attributeContents->attribute( 'output' )->attribute( 'output_text')
-             . "]]>\n";
+            . (
+                eZINI::instance( 'ezxmlexport.ini' )->variable( 'ExportSettings', 'UseXHTMLOutput' ) === 'enabled' ?
+                    $attributeContents->attribute( 'output' )->attribute( 'output_text') :
+                    $attributeContents->attribute( 'xml_data' )
+              )
+            . "]]>\n";
     }
 }
 ?>

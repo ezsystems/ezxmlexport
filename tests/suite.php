@@ -21,6 +21,7 @@ class eZXMLExportTestSuite extends ezpDatabaseTestSuite
         $this->addTestSuite( 'eZXMLExportAvailableContentClassesTest' );
         $this->addTestSuite( 'eZXMLExportAvailableContentClassAttributesTest' );
         $this->addTestSuite( 'eZXMLExportCustomersTest' );
+        $this->addTestSuite( 'eZXMLTextXMLExportTest' );
     }
 
     public static function suite()

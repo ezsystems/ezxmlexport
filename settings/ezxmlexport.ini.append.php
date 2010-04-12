@@ -12,6 +12,11 @@ FetchLimit=250
 
 PHPBinaryPath=/usr/bin/php
 
+# ezxmltext fields can be exported as XHTML (default) or XML (recommended).
+# It is recommended to set it to 'disabled' as it creates a more flexible
+# output but is enabled by default for backward compatibility reasons.
+UseXHTMLOutput=enabled
+
 [FTPSettings]
 FTPShipment=disabled
 DeleteSourceFileAfterShipment=enabled
