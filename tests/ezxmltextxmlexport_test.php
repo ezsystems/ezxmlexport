@@ -50,6 +50,7 @@ EOT;
     public function testXHTMLOutput()
     {
         ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseXHTMLOutput', 'enabled' );
+        ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseCDATA', 'enabled' );
         $this->assertRegExp(
             '@<xml>\s*<!\[CDATA\[\s*<a [^>]+></a><h\d>This is a header</h\d><p>eZ Publish is a &quot;Content Management System&quot; \(CMS\)</p>\]\]>\s*</xml>@',
             $this->XMLTextXMLExport->xmlize( $this->object->dataMap["xml"] )
@@ -59,8 +60,29 @@ EOT;
     public function testXMLOutput()
     {
         ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseXHTMLOutput', 'disabled' );
+        ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseCDATA', 'enabled' );
         $this->assertRegExp(
-            '@<xml><!\[CDATA\[\s*<\?xml version="1.0" encoding="utf-8"\?>\s*<section[^>]*><section><header>This is a header</header><paragraph>eZ Publish is a "Content Management System" \(CMS\)</paragraph></section></section>\s*\]\]>\s*</xml>@',
+            '@<xml>\s*<!\[CDATA\[\s*<section[^>]*><section><header>This is a header</header><paragraph>eZ Publish is a "Content Management System" \(CMS\)</paragraph></section></section>\s*\]\]>\s*</xml>@',
+            $this->XMLTextXMLExport->xmlize( $this->object->dataMap["xml"] )
+        );
+    }
+
+    public function testXHTMLNoCDATAOutput()
+    {
+        ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseXHTMLOutput', 'enabled' );
+        ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseCDATA', 'disabled' );
+        $this->assertRegExp(
+            '@<xml>\s*<a [^>]+></a><h\d>This is a header</h\d><p>eZ Publish is a &quot;Content Management System&quot; \(CMS\)</p>\s*</xml>@',
+            $this->XMLTextXMLExport->xmlize( $this->object->dataMap["xml"] )
+        );
+    }
+
+    public function testXMLNoCDATAOutput()
+    {
+        ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseXHTMLOutput', 'disabled' );
+        ezpINIHelper::setINISetting( 'ezxmlexport.ini', 'ExportSettings', 'UseCDATA', 'disabled' );
+        $this->assertRegExp(
+            '@<xml>\s*<section[^>]*><section><header>This is a header</header><paragraph>eZ Publish is a "Content Management System" \(CMS\)</paragraph></section></section>\s*</xml>@',
             $this->XMLTextXMLExport->xmlize( $this->object->dataMap["xml"] )
         );
     }

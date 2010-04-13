@@ -17,6 +17,11 @@ PHPBinaryPath=/usr/bin/php
 # output but is enabled by default for backward compatibility reasons.
 UseXHTMLOutput=enabled
 
+# ezxmltext fields can be encapsulated in a CDATA section while exported.
+# This could however prevent an easy processing of the content and might
+# therefor be disabled
+UseCDATA=enabled
+
 [FTPSettings]
 FTPShipment=disabled
 DeleteSourceFileAfterShipment=enabled

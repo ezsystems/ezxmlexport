@@ -47,14 +47,26 @@ class eZXMLTextXMLExport extends eZXMLExportDatatype
     protected function toXML()
     {
         $attributeContents = $this->contentObjectAttribute->content();
+        $xmlExportIni = eZINI::instance( 'ezxmlexport.ini' );
 
-        return "<![CDATA[\n"
-            . (
-                eZINI::instance( 'ezxmlexport.ini' )->variable( 'ExportSettings', 'UseXHTMLOutput' ) === 'enabled' ?
-                    $attributeContents->attribute( 'output' )->attribute( 'output_text') :
-                    $attributeContents->attribute( 'xml_data' )
-              )
-            . "]]>\n";
+        if ( $xmlExportIni->variable( 'ExportSettings', 'UseXHTMLOutput' ) === 'enabled' )
+        {
+            $output = $attributeContents->attribute( 'output' )->attribute( 'output_text');
+        }
+        else
+        {
+            $doc = new DOMDocument('1.0');
+            $doc->loadXML( $attributeContents->attribute( 'xml_data' ) );
+
+            $xpath = new DOMXPath($doc);
+
+            $output = $doc->saveXML( $xpath->query( '/*' )->item( 0 ) );
+        }
+
+        if ( $xmlExportIni->variable( 'ExportSettings', 'UseCDATA' ) === 'enabled' )
+            return "<![CDATA[\n$output]]>\n";
+
+        return "\n$output\n";
     }
 }
 ?>
