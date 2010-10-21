@@ -1,18 +1,35 @@
-Changes from ezxmlexport-1.0.0 to ezxmlexport-1.1
+Changes from 1.2.0 to 1.3.0
+===========================
 
-Bugfixes:
+Bugs
+****
+
+Enhancements
+************
+
+- Implemented enhancement #016383: Make eZXMLExport compatible with admin2
+
+Changes from 1.1.0 to 1.2.0
+===========================
+
+Bugs
+****
+
+Changes from 1.0.0 to 1.1.0
+===========================
+
+Bugs
+****
+
 - Fixed bug #16107 : eZXMLExport doesn't play well with 'move selected nodes' option
 - Fixed bug #16359: XML Export menu entry not showed at new admin interface
 
-Changes from ezxmlexport1.0-alpha1 to ezxmlexport1.0-alpha2
+Changes from 1.0.0alpha2 to 1.0.0alpha3
+=======================================
 
-*Bugfixes:
-- Fixed bug #4148: "Add a customer" does not work
-- Fixed bug #4166: Valeur du champ "Every" perdu
-- Fixed bug #4167: Valeurs des champs d'édition d'un export perdues
-- Fixed bug #4180: Le calendrier ne s'affiche pas correctement
+Bugs
+****
 
-Changes from ezxmlexport1.0-alpha1 to ezxmlexport1.0-alpha3
 - Fixed bug #4210 : Problème avec les accents dans le XSLT
 - Fixed bug #4213 : Error with the ezimage datatype 
 - Fixed bug #4208 : location missing in the xml 
@@ -22,4 +39,15 @@ Changes from ezxmlexport1.0-alpha1 to ezxmlexport1.0-alpha3
 - Fixed bug #4192 : Recurrence value is always zero and forces to choose an EndDate 
 - Fixed bug #4204 : erreur sur le calcul de la fréquence de l'excution d'export 
 - Fixed bug #4205 : Boutton "Show content that will be exported" renvois fatal error 
-- Fixed bug #4183 : Les information FTP doivent être facultatives 
+- Fixed bug #4183 : Les information FTP doivent être facultatives
+
+Changes from 1.0.0alpha1 to 1.0.0alpha2
+=======================================
+
+Bugs
+****
+
+- Fixed bug #4148: "Add a customer" does not work
+- Fixed bug #4166: Valeur du champ "Every" perdu
+- Fixed bug #4167: Valeurs des champs d'édition d'un export perdues
+- Fixed bug #4180: Le calendrier ne s'affiche pas correctement

@@ -1,13 +1,16 @@
 <script type="text/javascript">
+    // Namespace
+    var ezxmlexport = window.ezxmlexport || {ldelim}{rdelim};
+    ezxmlexport.contentClassAttributeIDList = ezxmlexport.contentClassAttributeIDList || [];
+
+    ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
+
     YAHOO.util.Event.addListener( "eZXMLExportStoreButton"  , "click", storeAvailableContentClassAttributesForExport );
     YAHOO.util.Event.addListener( "eZXMLExportApplyButton"  , "click", storeAvailableContentClassAttributesForExport );
 
-    // super globals !!
-    var serverRoot = {'/'|ezurl( 'single', 'full' )};
-    var contentClassAttributeIDList = new Array();
-    {section var=Attributes loop=$attributes}
-        contentClassAttributeIDList.push( {$Attributes.item.id} );
-    {/section}
+    {foreach $attributes as $attribute}
+        ezxmlexport.contentClassAttributeIDList.push( {$attribute.id} );
+    {/foreach}
 </script>
 {* Warnings *}
 

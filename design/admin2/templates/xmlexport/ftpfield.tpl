@@ -1,11 +1,3 @@
-<script type="text/javascript">
-    YAHOO.util.Event.addListener( "FTPTestButton", "click", testFTP );
-
-    // Namespace
-    var ezxmlexport = window.ezxmlexport || {ldelim}{rdelim};
-    ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
-</script>
-
 <div class="block">
         <label>{'FTP target'|i18n('design/admin/xmlexport')} :</label>
 {if ezini( 'FTPSettings', 'FTPShipment', 'ezxmlexport.ini' )|eq( 'enabled' )}
