@@ -1,32 +1,5 @@
-{ezscript_require( array( 'ezjsc::yui2', 'calendar.js' ) )}
-{ezcss_require( array( 'ftprelated.css', 'calendar.css' ) )}
-
-<script type="text/javascript">
-// Namespace
-var ezxmlexport = window.ezxmlexport || {ldelim}{rdelim};
-ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
-
-(function() {ldelim}
-    YUILoader.onSuccess = function() {ldelim}
-        YAHOO.util.Event.addListener( "FTPTestButton", "click", testFTP );
-    {rdelim};
-
-    YUILoader.addModule({ldelim}
-        name: 'xmlexport-classes',
-        type: 'js',
-        fullpath: '{"javascript/ezxmlexport_contentclasses.js"|ezdesign( 'no' )}',
-        requires: ["connection","yahoo-dom-event"],
-        after: ["connection","yahoo-dom-event"],
-        skinnable: false
-    {rdelim});
-
-    YUILoader.require(["xmlexport-classes"]);
-
-    // Load the files using the insert() method.
-    var options = [];
-    YUILoader.insert(options, "js");
-{rdelim})();
-</script>
+{ezscript_require( 'calendar.js' )}
+{ezcss_require( 'calendar.css' )}
 
 {* Warnings *}
 {if $errorMessageList}
