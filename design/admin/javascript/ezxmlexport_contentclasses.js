@@ -14,7 +14,7 @@ function addLoadEvent(func) {
 
 function storeAvailableContentClassAttributesForExport( e )
 {
-    var serverURL = encodeURI( serverRoot + '/xmlexport/storeavailability' );
+    var serverURL = encodeURI( ezxmlexport.serverRoot + '/xmlexport/storeavailability' );
     var postData = "";
     var classID = document.getElementById( 'eZXMLExportContentClassID' ).value;
     var contentClassAttributeList = '';
@@ -23,11 +23,11 @@ function storeAvailableContentClassAttributesForExport( e )
     {
         classAction = "insert";
 
-        for( var i =0; i < contentClassAttributeIDList.length; i++ )
+        for( var i =0; i < ezxmlexport.contentClassAttributeIDList.length; i++ )
         {
-            if( document.getElementById( 'ContentAttribute_available_xml_export_' + contentClassAttributeIDList[i] ).checked == true )
+            if( document.getElementById( 'ContentAttribute_available_xml_export_' + ezxmlexport.contentClassAttributeIDList[i] ).checked == true )
             {
-                contentClassAttributeList += "ContentClassAttributeIDList[]=" + contentClassAttributeIDList[i] + '&';
+                contentClassAttributeList += "ContentClassAttributeIDList[]=" + ezxmlexport.contentClassAttributeIDList[i] + '&';
             }
         }
     }
@@ -65,7 +65,7 @@ function testFTP()
 
     var postString = 'FTPHost=' + FTPHost + '&FTPPort=' + FTPPort + '&FTPLogin=' + FTPLogin + '&FTPPassword=' + FTPPassword + '&FTPPath=' + FTPPath;
     var postData   = encodeURI( postString );
-    var serverURL  = encodeURI( serverRoot + '/xmlexport/ftptest' );
+    var serverURL  = encodeURI( ezxmlexport.serverRoot + '/xmlexport/ftptest' );
 
     var handleSuccess = function(o){
         /* console.log( o.responseText ); */
