@@ -30,7 +30,7 @@ class eZTextXMLExport extends eZXMLExportDatatype
 
     protected function toXML()
     {
-        return $this->contentObjectAttribute->content();
+        return htmlspecialchars( $this->contentObjectAttribute->content() );
     }
 }
 ?>
