@@ -31,9 +31,9 @@ class eZXMLExportInfo
         $eZCopyrightString = 'Copyright (C) 1999-2010 eZ Systems AS';
 
         return array( 'Name'      => 'eZ XML Export extension',
-                      'Version'   => '1.x-dev',
+                      'Version'   => '//autogentag//',
                       'Copyright' => $eZCopyrightString,
-                      'License'   => 'GNU General Public License v2.0' );
+                      'License'   => '//EZP_LICENSE//' );
     }
 }
 
