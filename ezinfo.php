@@ -2,7 +2,7 @@
 //
 // ## BEGIN COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 // SOFTWARE NAME: eZ Publish
-// SOFTWARE RELEASE: 1.x
+// SOFTWARE RELEASE: //autogentag//
 // COPYRIGHT NOTICE: Copyright (C) 1999-2010 eZ Systems AS
 // SOFTWARE LICENSE: GNU General Public License v2.0
 // NOTICE: >
@@ -33,7 +33,7 @@ class eZXMLExportInfo
         return array( 'Name'      => 'eZ XML Export extension',
                       'Version'   => '//autogentag//',
                       'Copyright' => $eZCopyrightString,
-                      'License'   => '//EZP_LICENSE//' );
+                      'License'   => 'GNU General Public License v2.0' );
     }
 }
 
