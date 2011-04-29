@@ -24,5 +24,18 @@ class eZXMLExportFunctionCollection
     {
         return array( 'result' => eZXMLExportHelpers::fetchXSLTFiles() );
     }
+
+    /**
+     * Returns the eZXMLExportAvailableContentClasses object corresponding to 
+     * the $classID or false if it does not exist
+     * 
+     * @param int $classID 
+     * @return eZXMLExportAvailableContentClasses or false
+     */
+    public static function fetchClassAvailability( $classID )
+    {
+        $objects = eZXMLExportAvailableContentClasses::fetchList( null, array( 'contentclass_id' => $classID ) );
+        return array( "result" => isset( $objects[0] ) ? $objects[0] : false );
+    }
 }
 ?>

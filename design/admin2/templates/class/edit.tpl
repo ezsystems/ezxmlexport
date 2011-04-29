@@ -37,17 +37,16 @@ ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
 {/foreach}
 </script>
 
-{def $class_xml_availability = fetch( 'xmlexport', 'class', hash( 'class_id',  $class.id ) )}
-{def $class_available_for_xml_export = false()}
+{def $class_xml_availability = fetch( 'xmlexport', 'class_availability', hash( 'class_id',  $class.id ) )
+     $class_available_for_xml_export = false()
+     $attribute_xml_availability = array()}
 
 {if $class_xml_availability}
     {set $class_available_for_xml_export = true()}
+    {foreach $class_xml_availability.available_xml_export_attributes as $item}
+        {set $attribute_xml_availability = $attribute_xml_availability|append( $item.contentclass_attribute_id )}
+    {/foreach}
 {/if}
-
-{def $attribute_xml_availability = array()}
-{foreach $class_xml_availability as $item}
-    {set $attribute_xml_availability = $attribute_xml_availability|append( $item.contentclass_attribute_id )}
-{/foreach}
 
 {* eZXMLExport END *}
 
@@ -119,7 +118,7 @@ ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
 </div>
 <div class="element">
     {include uri="design:class/datatypes.tpl" name='DataTypes' id_name='DataTypeStringTop' selection_name='DataTypeString' datatypes=$datatypes current=$datatype}
-    <input class="button" type="submit" name="NewButton" id="NewButtonTop" value="{'Add attribute'|i18n( 'design/admin/class/edit' )}" title="{'Add a new attribute to the class. Use the menu on the left to select the attribute type.'|i18n( 'design/admin/class/edit' )|wash}" />
+    <input class="button ezxmlexport-button" type="submit" name="NewButton" id="NewButtonTop" value="{'Add attribute'|i18n( 'design/admin/class/edit' )}" title="{'Add a new attribute to the class. Use the menu on the left to select the attribute type.'|i18n( 'design/admin/class/edit' )|wash}" />
 </div>
 <div class="button-right">
     <a href="JavaScript:void(0);" onclick="jQuery('#page').toggleClass('main-column-only');" class="controlbar-top-full-screen-toggle" title="{'Toggle fullscreen editing!'|i18n( 'design/admin/content/edit' )}">&nbsp;</a>
@@ -393,7 +392,7 @@ ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
     
     <div class="button-right">
     {include uri="design:class/datatypes.tpl" name=DataTypes id_name=DataTypeString datatypes=$datatypes current=$datatype}
-    <input class="button" type="submit" name="NewButton" value="{'Add attribute'|i18n( 'design/admin/class/edit' )}" title="{'Add a new attribute to the class. Use the menu on the left to select the attribute type.'|i18n( 'design/admin/class/edit' )|wash}" />
+    <input class="button ezxmlexport-button" type="submit" name="NewButton" value="{'Add attribute'|i18n( 'design/admin/class/edit' )}" title="{'Add a new attribute to the class. Use the menu on the left to select the attribute type.'|i18n( 'design/admin/class/edit' )|wash}" />
     </div>
     <div class="float-break"></div>
 </div>

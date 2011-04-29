@@ -32,6 +32,17 @@ $FunctionList['class'] = array(
                                   'type' => 'integer',
                                   'required' => true ) ) );
 
+$FunctionList['class_availability'] = array(
+    'name'            => 'class_availability',
+    'operation_types' => array( 'read' ),
+    'call_method'     => array( 'include_file' => 'extension/ezxmlexport/modules/xmlexport/xmlexportfunctioncollection.php',
+                                'class'        => 'eZXMLExportFunctionCollection',
+                                'method'       => 'fetchClassAvailability' ),
+    'parameter_type' => 'standard',
+    'parameters' => array( array( 'name' => 'class_id',
+                                  'type' => 'integer',
+                                  'required' => true ) ) );
+
 $FunctionList['xsltfiles'] = array(
     'name'            => 'xsltfiles',
     'operation_types' => array( 'read' ),

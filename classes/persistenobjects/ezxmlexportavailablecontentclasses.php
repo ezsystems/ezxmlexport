@@ -12,11 +12,23 @@ class eZXMLExportAvailableContentClasses extends eZPersistentObject
                                                                      'datatype' => 'integer',
                                                                      'required' => true ) ),
                       'keys' => array(),
-                      'function_attributes' => array(),
+                      'function_attributes' => array( 'available_xml_export_attributes' => 'availableXMLExportAttributes' ),
                       'class_name' => 'eZXMLExportAvailableContentClasses',
                       'sort' => array(),
                       'name' => 'ezxport_available_cclasses' );
         return $def;
+    }
+
+    /**
+     * Returns the list eZXMLExportAvailableContentClassAttributes object
+     *
+     * @see eZXMLExportAvailableContentClassAttributes::fetchFromClassID
+     *
+     * @return array( eZXMLExportAvailableContentClassAttributes )
+     */
+    public function availableXMLExportAttributes()
+    {
+        return eZXMLExportAvailableContentClassAttributes::fetchFromClassID( $this->contentclass_id );
     }
 
     public static function fetchAll( $classID = null )
