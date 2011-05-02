@@ -66,7 +66,7 @@ class eZCountryXMLExport extends eZXMLExportDatatype
         {
             foreach( $countryList['value'] as $country )
             {
-                $selectedCountries[] = $country;
+                $selectedCountries[] = $country['Name'];
             }
         }
         else
