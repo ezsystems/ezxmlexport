@@ -21,6 +21,7 @@ UseXHTMLOutput=enabled
 # This could however prevent an easy processing of the content and might
 # therefor be disabled
 UseCDATA=enabled
+UseRemoteFiles=enabled
 
 [FTPSettings]
 FTPShipment=disabled
