@@ -21,6 +21,11 @@ UseXHTMLOutput=enabled
 # This could however prevent an easy processing of the content and might
 # therefor be disabled
 UseCDATA=enabled
+
+# If "enabled", values of file paths will contain the URL of the source
+# website ( http://example.com/var/plain_site/... ) so you'll not have
+# to copy files on your destination server. If "disabled" file paths will be
+# relative paths from the root directory (var/plain_site/storage/...)
 UseRemoteFiles=enabled
 
 [FTPSettings]
