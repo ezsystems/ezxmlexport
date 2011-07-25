@@ -67,6 +67,9 @@ class eZBinaryFileXMLExport extends eZXMLExportDatatype
         // direct access URL
         $url = $this->contentObjectAttribute->content()->filePath();
 
+        if( eZINI::instance( 'ezxmlexport.ini' )->variable( 'ExportSettings', 'UseRemoteFiles' ) != 'enabled' )
+            return $url;
+
         if( PHP_SAPI == 'cli' )
         {
             $ini = eZINI::instance( 'site.ini' );
