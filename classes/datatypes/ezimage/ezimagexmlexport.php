@@ -51,6 +51,9 @@ class eZImageXMLExport extends eZXMLExportDatatype
 
         $imageURL = $originalImage['url'];
 
+        if( eZINI::instance( 'ezxmlexport.ini' )->variable( 'ExportSettings', 'UseRemoteFiles' ) != 'enabled' )
+            return $imageURL;
+
         if( PHP_SAPI == 'cli' )
         {
             $ini = eZINI::instance( 'site.ini' );
