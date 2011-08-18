@@ -19,7 +19,7 @@ if( ( $Type != 'contentlist' and $Type != 'realtime' ) and (int)$ID > 0 )
     return;
 }
 
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 $tpl->setVariable( 'export_id', $exportID );
 
 if( $Type == 'contentlist' )

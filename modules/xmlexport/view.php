@@ -18,7 +18,7 @@ if( ( $Type != 'customer' and $Type != 'export' ) and (int)$ID > 0 )
     return;
 }
 
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 
 if( $Type == 'customer' )
 {

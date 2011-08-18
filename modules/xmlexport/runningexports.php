@@ -2,7 +2,7 @@
 include_once( "kernel/common/template.php" );
 
 $module = $Params['Module'];
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 
 $exportList = eZXMLExportExports::fetchByStatus( eZXMLExportProcessLog::STATUS_XML_GENERATION_DONE );
 

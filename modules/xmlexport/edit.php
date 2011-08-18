@@ -18,7 +18,7 @@ if( $Type != 'customer' and $Type != 'export' )
     return;
 }
 
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 
 $viewParameters = array( 'type' => $Type);
 
