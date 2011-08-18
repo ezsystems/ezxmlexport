@@ -38,6 +38,10 @@ function storeAvailableContentClassAttributesForExport( e )
 
     postData = encodeURI( "ContentClassID=" + classID + '&Action=' + classAction + '&' + contentClassAttributeList );
 
+    var _tokenNode = document.getElementById('ezxform_token_js');
+    if ( _tokenNode )
+        postData += '&ezxform_token=' + _tokenNode.getAttribute('title');
+
     var handleSuccess = function(o){
         /* if(o.responseText !== undefined){ console.log('success !'); } */
     }
@@ -66,6 +70,10 @@ function testFTP()
     var postString = 'FTPHost=' + FTPHost + '&FTPPort=' + FTPPort + '&FTPLogin=' + FTPLogin + '&FTPPassword=' + FTPPassword + '&FTPPath=' + FTPPath;
     var postData   = encodeURI( postString );
     var serverURL  = encodeURI( ezxmlexport.serverRoot + '/xmlexport/ftptest' );
+
+    var _tokenNode = document.getElementById('ezxform_token_js');
+    if ( _tokenNode )
+        postData += '&ezxform_token=' + _tokenNode.getAttribute('title');
 
     var handleSuccess = function(o){
         /* console.log( o.responseText ); */
