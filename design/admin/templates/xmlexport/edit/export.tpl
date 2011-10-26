@@ -159,12 +159,15 @@
             <label>{'Every'|i18n('design/admin/ezxmlexport')}</label><input type="text" name="ExportRecurrenceValue" value="{$ExportRecurrenceValueValue}" size="3"/>
             <select name="ExportRecurrenceUnit">
                 <option value="-1">{'Choose an option below'|i18n('design/admin/ezxmlexport')}</option>
-                {def $possibleValueList = array( 'day', 'week', 'month' )}
-                {foreach $possibleValueList as $possibleValue}
+                {def $possibleValueList = hash(
+                    'day', 'Day'|i18n('design/admin/ezxmlexport'),
+                    'week', 'Week'|i18n('design/admin/ezxmlexport'),
+                    'month', 'Month'|i18n('design/admin/ezxmlexport') )}
+                {foreach $possibleValueList as $possibleValue => $possibleValueString}
                     {if eq( $possibleValue, $ExportRecurrenceUnitValue )}
-                        <option value="{$possibleValue}" selected="selected">{$possibleValue|upfirst|i18n('design/admin/ezxmlexport')|wash}</option>
+                        <option value="{$possibleValue}" selected="selected">{$possibleValueString}</option>
                     {else}
-                        <option value="{$possibleValue}">{$possibleValue|upfirst|i18n('design/admin/ezxmlexport')|wash}</option>
+                        <option value="{$possibleValue}">{$possibleValueString}</option>
                     {/if}
                 {/foreach}
                 {undef $possibleValueList}

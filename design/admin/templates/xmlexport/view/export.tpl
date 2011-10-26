@@ -65,7 +65,7 @@
             {'From'|i18n( 'design/admin/xmlexport' )}
             {$export.start_date|l10n( 'shortdate' )}
             {'Every'|i18n( 'design/admin/xmlexport' )}
-            {$export_schedule.schedule.value} {$export_schedule.schedule.unit|i18n( 'design/admin/xmlexport' )}
+            {$export_schedule.schedule.value} {$export_schedule.schedule.unit}
         {/if}
         {undef $export_schedule}
     </div>
@@ -77,12 +77,12 @@
 
     <div class="block">
         <label>{'Compression'|i18n( 'design/admin/xmlexport' )}:</label>
-        {$export.compression|wash|choose( 'Disabled', 'Enabled' )|i18n( 'design/admin/xmlexport' )}
+        {$export.compression|wash|choose( 'Disabled'|i18n( 'design/admin/xmlexport' ), 'Enabled'|i18n( 'design/admin/xmlexport' ) )}
     </div>
 
     <div class="block">
         <label>{'Related object handling'|i18n( 'design/admin/xmlexport' )}:</label>
-        {$export.related_object_handling|wash|choose( 'Disabled', 'Enabled' )|i18n( 'design/admin/xmlexport' )}
+        {$export.related_object_handling|wash|choose( 'Disabled'|i18n( 'design/admin/xmlexport' ), 'Enabled'|i18n( 'design/admin/xmlexport' ) )}
     </div>
 </div>
 

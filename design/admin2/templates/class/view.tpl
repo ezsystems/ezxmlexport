@@ -109,7 +109,7 @@
 
     <div class="block">
         <label>{'Availabe for XML export'|i18n( 'design/admin/class/view' )}:</label>
-        {$class_available_for_xml_export|choose( 'No', 'Yes' )|i18n( 'design/admin/xmlexport' )}
+        {$class_available_for_xml_export|choose( 'No'|i18n( 'design/admin/xmlexport' ), 'Yes'|i18n( 'design/admin/xmlexport' ) )}
     </div>
 
     {* eZXMLExport END *}
