@@ -132,10 +132,10 @@ class eZXMLExportExporter
      */
     public  $ExportLimit;
 
-    // those values could be configurable
-    const EXPORT_FILE_DIRECTORY  = 'extension/ezxmlexport/exports/xml/';
-    const LOG_FILE_DIRECTORY     = 'extension/ezxmlexport/logs/';
-    const XSLT_STORAGE_DIRECTORY = 'extension/ezxmlexport/design/standard/xsl/';
+    // Folder variables (read from ezxmlexport.ini)
+    public $ExportFileDirectory;
+    public $LogFileDirectory;
+    public $XSLTStorageDirectory;
 
     const ID_REF_PREFIX          = 'id';
 
@@ -165,6 +165,10 @@ class eZXMLExportExporter
         $this->StartTime                  = time();
         $this->SourceList                 = unserialize( $this->eZXMLExport->attribute( 'sources' ) );
 
+        $ini = eZINI::instance( 'ezxmlexport.ini' );
+        $this->ExportFileDirectory = $ini->variable( 'ExportSettings', 'ExportFileDirectory' );
+        $this->LogFileDirectory = $ini->variable( 'ExportSettings', 'LogFileDirectory' );
+        $this->XSLTStorageDirectory = $ini->variable( 'XSLTSettings', 'XSLTStorageDirectory' );
 
         // those test are only used for a particular context, the "test" view
         // it is useless anywhere else
@@ -176,10 +180,9 @@ class eZXMLExportExporter
         if( $writeProcessLog )
         {
             $this->eZXMLExportLogger = new eZXMLExportLogger( 'utf-8',
-                                                              self::LOG_FILE_DIRECTORY,
+                                                              $this->LogFileDirectory,
                                                               $this->CleanExportName . '.log' );
 
-            $ini = eZINI::instance( 'ezxmlexport.ini' );
             if( ( $ini->variable( 'XSLTSettings', 'XSLTTransformation' ) == 'enabled' )
                 and
                 $this->eZXMLExport->attribute( 'xslt_file' ) != '' )
@@ -314,7 +317,7 @@ class eZXMLExportExporter
 
         $this->outputMessage( $message );
 
-        $exportDirectory = eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $this->CleanExportName;
+        $exportDirectory = $this->ExportFileDirectory . $this->CleanExportName;
 
         if( !file_exists( $exportDirectory ) and is_writable( $exportDirectory ) )
         {
@@ -532,7 +535,7 @@ class eZXMLExportExporter
                                     true ); // add footer
         }
 
-        $dirPath = eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $this->CleanExportName;
+        $dirPath = $this->ExportFileDirectory . $this->CleanExportName;
 
         $fileList = eZDir::findSubitems( $dirPath, false, false, false, '#^(?:.*).gz|.transformed.xml$#i' );
 
@@ -616,12 +619,12 @@ class eZXMLExportExporter
 
             $this->outputMessage( 'Applying XSLT' );
 
-            $XSLTPath = eZXMLExportExporter::XSLT_STORAGE_DIRECTORY . $this->eZXMLExport->attribute( 'xslt_file' );
+            $XSLTPath = $this->XSLTStorageDirectory . $this->eZXMLExport->attribute( 'xslt_file' );
 
             // sanity check : no empty files
             if( eZFile::getContents( $XSLTPath ) == '' )
             {
-                $message = 'XLST File is empty';
+                $message = 'XSLT File is empty';
                 $this->outputMessage( $message );
                 eZDebug::writeError( $message );
                 return false;
@@ -630,7 +633,7 @@ class eZXMLExportExporter
             //foreach( $this->WrittenFileList as $key => $generatedXMLFile )
             foreach( $fileList as $key => $generatedXMLFile )
             {
-                $directory = eZXMLExportExporter::EXPORT_FILE_DIRECTORY
+                $directory = $this->ExportFileDirectory
                              . $this->CleanExportName
                              . '/';
 
@@ -724,7 +727,7 @@ class eZXMLExportExporter
                     {
                         $this->outputMessage( 'Sending file ' . $readyToSendFile . ' ', false );
 
-                        $sourceFile = eZXMLExportExporter::EXPORT_FILE_DIRECTORY
+                        $sourceFile = $this->ExportFileDirectory
                                      . $this->CleanExportName
                                      . '/'
                                      . $readyToSendFile;
@@ -1191,12 +1194,12 @@ class eZXMLExportExporter
         if( $appendContents != true )
         {
            return eZFile::create( $this->XMLFile,
-                                  eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $this->CleanExportName,
+                                  $this->ExportFileDirectory . $this->CleanExportName,
                                   $this->getXMLResult( $addFileHeader,
                                                        $addFileFooter ) );
         }
 
-        if( !$fp = @fopen( eZXMLExportExporter::EXPORT_FILE_DIRECTORY
+        if( !$fp = @fopen( $this->ExportFileDirectory
                           . $this->CleanExportName
                           . '/'
                           . $this->XMLFile, 'a' ) )
@@ -1251,7 +1254,7 @@ class eZXMLExportExporter
                 return false;
             }
 
-            $exportDirectory = eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $this->CleanExportName;
+            $exportDirectory = $this->ExportFileDirectory . $this->CleanExportName;
 
             $shellCommand = $tarBinaryPath . ' czf ' . $exportDirectory . '/' . $this->CleanExportName . '.tar.gz ' . $exportDirectory;
 

@@ -32,6 +32,11 @@ UseRemoteFiles=enabled
 StateFilterList[]
 #StateFilterList[]=7
 
+# Folder to place export files (ending slash required)
+ExportFileDirectory=var/storage/xmlexport/
+# Folder to save export logs (ending slash required)
+LogFileDirectory=var/log/xmlexport/
+
 [FTPSettings]
 FTPShipment=disabled
 DeleteSourceFileAfterShipment=enabled
@@ -39,6 +44,8 @@ DeleteSourceFileAfterShipment=enabled
 [XSLTSettings]
 XSLTTransformation=disabled
 DeleteXMLSourceAfterXSLTTransformation=disabled
+# Folder for XSLT files (ending slash required)
+XSLTStorageDirectory=extension/ezxmlexport/design/standard/xsl/
 
 [CompressionSettings]
 TarBinaryPath=/usr/bin/tar

@@ -50,10 +50,10 @@ class eZXMLExportExporterTest extends ezpDatabaseTestCase
                                                   eZXMLExportExporterTest::WRITE_LOG,
                                                   eZXMLExportExporterTest::WRITE_PROCESS_LOG );
 
-        unlink( eZXMLExportExporter::LOG_FILE_DIRECTORY    . $eZXMLExporter->CleanExportName . '.log' );
-        @unlink( eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.xml' );
-        @unlink( eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.tar.gz' );
-        @rmdir(  eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $eZXMLExporter->CleanExportName );
+        unlink( $eZXMLExporter->LogFileDirectory . $eZXMLExporter->CleanExportName . '.log' );
+        @unlink( $eZXMLExporter->ExportFileDirectory . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.xml' );
+        @unlink( $eZXMLExporter->ExportFileDirectory . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.tar.gz' );
+        @rmdir(  $eZXMLExporter->ExportFileDirectory . $eZXMLExporter->CleanExportName );
 
         parent::tearDown();
     }
@@ -93,7 +93,7 @@ class eZXMLExportExporterTest extends ezpDatabaseTestCase
         $this->assertEquals( $row['status']    , eZXMLExportProcessLog::STATUS_XML_GENERATION_STARTED );
 
         // XML log must be created
-        $this->assertFileExists( eZXMLExportExporter::EXPORT_FILE_DIRECTORY . $this->eZXMLExporter->CleanExportName . '/' . $this->eZXMLExporter->CleanExportName . '.xml' );
+        $this->assertFileExists( $this->eZXMLExporter->ExportFileDirectory . $this->eZXMLExporter->CleanExportName . '/' . $this->eZXMLExporter->CleanExportName . '.xml' );
     }
 
     public function testFetchNodeTotal()

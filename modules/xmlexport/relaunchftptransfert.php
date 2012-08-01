@@ -15,7 +15,7 @@ if( $Module->isCurrentAction( 'RelaunchFTPTransfert' ) )
         {
             $eZXMLExport = new eZXMLExportExporter( $exportID );
 
-            $dirPath     = eZXMLExportExporter::EXPORT_FILE_DIRECTORY
+            $dirPath     = $eZXMLExport->ExportFileDirectory
                            . $eZXMLExport->CleanExportName;
 
             $fileList    = eZDir::findSubitems( $dirPath );
