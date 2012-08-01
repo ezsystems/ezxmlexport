@@ -28,6 +28,10 @@ UseCDATA=enabled
 # relative paths from the root directory (var/plain_site/storage/...)
 UseRemoteFiles=enabled
 
+# Filter exports on a (number of) specified content state ID's
+StateFilterList[]
+#StateFilterList[]=7
+
 [FTPSettings]
 FTPShipment=disabled
 DeleteSourceFileAfterShipment=enabled

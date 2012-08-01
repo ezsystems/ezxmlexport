@@ -971,6 +971,10 @@ class eZXMLExportExporter
      */
     private function generateFetchParameters()
     {
+        $ini = eZINI::instance( 'ezxmlexport.ini' );
+        $state_filter_list = $ini->variable( 'ExportSettings', 'StateFilterList' );
+        $state_filter =  ( !empty( $state_filter_list ) ) ? array( 'state', 'in', $state_filter_list ) : array();
+
         $maxDepth = $this->getMaxContentTreeDepth();
 
         if( !$maxDepth )
@@ -998,6 +1002,11 @@ class eZXMLExportExporter
                          'ClassFilterArray' => $classFilterArray,
                          'SortBy'           => array( array( 'class_identifier', true ),
                                                       array( 'published'       , false ) ) );
+
+        if ( !empty( $state_filter ) )
+        {
+            $params['AttributeFilter'] = array( $state_filter );
+        }
 
         if( $this->eZXMLExport->attribute( 'export_hidden_nodes' ) == '1' )
         {
