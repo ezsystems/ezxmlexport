@@ -103,7 +103,7 @@
     {* Identifier. *}
     <div class="block">
     <label>{'Identifier'|i18n( 'design/admin/class/edit' )}:</label>
-    <input class="box" type="text" name="ContentClass_identifier" size="30" value="{$class.identifier|wash}" title="{'Use this field to set the internal name of the class. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.'|i18n( 'design/admin/class/edit' )}" />
+    <input class="box" type="text" name="ContentClass_identifier" size="30" value="{$class.identifier|wash}" title="{'Use this field to set the internal name of the class. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.'|i18n( 'design/admin/class/edit' )}" maxlength="50" />
     </div>
 
     {* Object name pattern. *}
@@ -192,7 +192,7 @@
 {* Attribute identifier. *}
 <div class="block">
 <label>{'Identifier'|i18n( 'design/admin/class/edit' )}:</label>
-<input class="box" type="text" name="ContentAttribute_identifier[]" value="{$Attributes.item.identifier}" title="{'Use this field to set the internal name of the attribute. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.'|i18n( 'design/admin/class/edit' )}" />
+<input class="box" type="text" name="ContentAttribute_identifier[]" value="{$Attributes.item.identifier}" title="{'Use this field to set the internal name of the attribute. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.'|i18n( 'design/admin/class/edit' )}" maxlength="50" />
 </div>
 
 <!-- Attribute input End -->
