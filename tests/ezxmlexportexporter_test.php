@@ -53,7 +53,7 @@ class eZXMLExportExporterTest extends ezpDatabaseTestCase
         unlink( $eZXMLExporter->LogFileDirectory . $eZXMLExporter->CleanExportName . '.log' );
         @unlink( $eZXMLExporter->ExportFileDirectory . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.xml' );
         @unlink( $eZXMLExporter->ExportFileDirectory . $eZXMLExporter->CleanExportName . '/' . $eZXMLExporter->CleanExportName . '.tar.gz' );
-        @rmdir(  $eZXMLExporter->ExportFileDirectory . $eZXMLExporter->CleanExportName );
+        @rmdir( $eZXMLExporter->ExportFileDirectory . $eZXMLExporter->CleanExportName );
 
         parent::tearDown();
     }

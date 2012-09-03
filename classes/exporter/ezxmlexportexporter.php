@@ -976,7 +976,7 @@ class eZXMLExportExporter
     {
         $ini = eZINI::instance( 'ezxmlexport.ini' );
         $state_filter_list = $ini->variable( 'ExportSettings', 'StateFilterList' );
-        $state_filter =  ( !empty( $state_filter_list ) ) ? array( 'state', 'in', $state_filter_list ) : array();
+        $state_filter = ( !empty( $state_filter_list ) ) ? array( 'state', 'in', $state_filter_list ) : array();
 
         $maxDepth = $this->getMaxContentTreeDepth();
 
