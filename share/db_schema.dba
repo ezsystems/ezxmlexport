@@ -23,7 +23,7 @@ $schema = array (
     ),
     'indexes' => 
     array (
-      'contentclass_attribute_id' => 
+      'idx_contentclass_attribute_id' => 
       array (
         'type' => 'unique',
         'fields' => 
@@ -56,7 +56,7 @@ $schema = array (
     ),
     'indexes' => 
     array (
-      'contentclass_id' => 
+      'idx_contentclass_id' => 
       array (
         'type' => 'unique',
         'fields' => 
@@ -73,9 +73,9 @@ $schema = array (
     array (
       'ftp_target' => 
       array (
-        'type' => 'text',
+        'type' => 'longtext',
         'not_null' => '1',
-        'default' => false,
+        'default' => '',
       ),
       'id' => 
       array (
@@ -131,7 +131,7 @@ $schema = array (
     ),
     'indexes' => 
     array (
-      'FK_process_log_id' => 
+      'fk_process_log_id' => 
       array (
         'type' => 'non-unique',
         'fields' => 
@@ -200,7 +200,7 @@ $schema = array (
         'length' => 100,
         'type' => 'varchar',
         'not_null' => '1',
-        'default' => '0',
+        'default' => '',
       ),
       'ftp_target' => 
       array (
@@ -237,9 +237,9 @@ $schema = array (
       ),
       'sources' => 
       array (
-        'type' => 'text',
+        'type' => 'longtext',
         'not_null' => '1',
-        'default' => false,
+        'default' => '',
       ),
       'start_date' => 
       array (
@@ -252,7 +252,7 @@ $schema = array (
       array (
         'length' => 70,
         'type' => 'varchar',
-        'not_null' => '0',
+        'not_null' => 0,
         'default' => '',
       ),
     ),
