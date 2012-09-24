@@ -1,6 +1,4 @@
 <?php
-include_once( 'kernel/common/template.php' );
-
 $Module = $Params['Module'];
 
 if( $Module->isCurrentAction( 'DeleteExport' ) )

@@ -1,6 +1,4 @@
 <?php
-include_once( "kernel/common/template.php" );
-
 $module = $Params['Module'];
 $tpl = eZTemplate::factory();
 
