@@ -619,7 +619,7 @@ class eZXMLExportExporter
             $XSLTPath = eZXMLExportExporter::XSLT_STORAGE_DIRECTORY . $this->eZXMLExport->attribute( 'xslt_file' );
 
             // sanity check : no empty files
-            if( eZFile::getContents( $XSLTPath ) == '' )
+            if ( file_get_contents( $XSLTPath ) == '' )
             {
                 $message = 'XLST File is empty';
                 $this->outputMessage( $message );

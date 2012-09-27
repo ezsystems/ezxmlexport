@@ -77,7 +77,7 @@ function storePersistentVariable( $variable, $pid )
 
 function getPersistentVariable( $pid )
 {
-    $serializedVariable = eZFile::getContents( 'var/cache/ezxmlexport.' . $pid . '.cache' );
+    $serializedVariable = file_get_contents( 'var/cache/ezxmlexport.' . $pid . '.cache' );
     return unserialize( $serializedVariable );
 }
 
