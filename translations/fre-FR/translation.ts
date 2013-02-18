@@ -41,7 +41,7 @@
     </message>
     <message>
         <source>Use this field to set the internal name of the class. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.</source>
-        <translation>Utilisez ce champ pour définir le nom interne de la classe. L'identifiant sera utilisé dans les templates et dans le code PHP. Les caractères autorisés sont les lettres, chiffres et underscore.</translation>
+        <translation>Utilisez ce champ pour définir le nom interne de la classe. L&apos;identifiant sera utilisé dans les templates et dans le code PHP. Les caractères autorisés sont les lettres, chiffres et underscore.</translation>
     </message>
     <message>
         <source>Object name pattern</source>
@@ -49,15 +49,15 @@
     </message>
     <message>
         <source>Use this field to configure how the name of the objects are generated. Type in the identifiers of the attributes that should be used. The identifiers must be enclosed in angle brackets. Text outside angle brackets will be included as it is shown here.</source>
-        <translation>Utilisez ce champ pour configurer la façon dont les noms des objets sont générés. Tapez les identifiants des attributs qui doivent être utilisés. Les identifiants doivent être placés entre crochets. Le texte en dehors de chevrons sera inclus tel qu'il est montré ici.</translation>
+        <translation>Utilisez ce champ pour configurer la façon dont les noms des objets sont générés. Tapez les identifiants des attributs qui doivent être utilisés. Les identifiants doivent être placés entre crochets. Le texte en dehors de chevrons sera inclus tel qu&apos;il est montré ici.</translation>
     </message>
     <message>
         <source>URL alias name pattern</source>
-        <translation>Attribut servant d'URL alias à l&apos;objet (encadrer l&apos;identifiant par &lt; et &gt;)</translation>
+        <translation>Attribut servant d&apos;URL alias à l&apos;objet (encadrer l&apos;identifiant par &lt; et &gt;)</translation>
     </message>
     <message>
         <source>Use this field to configure how the url alias of the objects are generated (applies to nice URLs). Type in the identifiers of the attributes that should be used. The identifiers must be enclosed in angle brackets. Text outside angle brackets will be included as is.</source>
-        <translation>Utilisez ce champ pour configurer la façon dont les url alias des objets seront générés. Tapez les identifiants des attributs qui doivent être utilisés. Les identifiants doivent être placés entre crochets. Le texte en dehors de chevrons sera inclus tel qu'il est montré ici.</translation>
+        <translation>Utilisez ce champ pour configurer la façon dont les urls alias des objets seront générés. Tapez les identifiants des attributs qui doivent être utilisés. Les identifiants doivent être placés entre crochets. Le texte en dehors de chevrons sera inclus tel qu&apos;il est montré ici.</translation>
     </message>
     <message>
         <source>Container</source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>Use this checkbox to allow instances of the class to have sub items. If checked, it will be possible to create new sub items. If not checked, the sub items will not be displayed.</source>
-         <translation>Utilisez ce champ pour autoriser les instanciations de cette classe à contenir des sous éléments. Si la case est cochée, il sera possible de créer de nouveaux sous éléments. Si elle n'est pas cochée, les sous éléments ne seront pas affichés.</translation>
+         <translation>Utilisez ce champ pour autoriser les instanciations de cette classe à contenir des sous éléments. Si la case est cochée, il sera possible de créer de nouveaux sous éléments. Si elle n&apos;est pas cochée, les sous éléments ne seront pas affichés.</translation>
     </message>
     <message>
         <source>Default sorting of children</source>
@@ -85,71 +85,71 @@
     </message>
     <message>
         <source>Use this checkbox to set the default availability for the objects of this class. The availability controls whether an object should be shown even if it does not exist in one of the languages specified by the &quot;SiteLanguageList&quot; setting. If this is the case, the system will use the main language of the object.</source>
-        <translation>Utilisez cette case à cocher pour définir par défaut la disponibilités des objets de cette classe. Le paramètre de disponibilité d'un objets définit si un objet doit être affiché même si il n'existe pas dans l'une des langues spécifiées par le setting &quot;SiteLanguageList&quot;. Si c'est le cas le système utlisera la langue principale de l'objet.</translation>
+        <translation>Utilisez cette case à cocher pour définir par défaut la disponibilités des objets de cette classe. Le paramètre de disponibilité d&apos;un objets définit si un objet doit être affiché même si il n&apos;existe pas dans l&apos;une des langues spécifiées par le setting &quot;SiteLanguageList&quot;. Si c&apos;est le cas le système utilisera la langue principale de l&apos;objet.</translation>
     </message>
     <message>
         <source>Use this checkbox to set this class as available for XML export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisez cette case à cocher pour définir cette classe comme disponible pour l&apos;export XML.</translation>
     </message>
     <message>
         <source>Class attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributs de la classe</translation>
     </message>
     <message>
         <source>Select attribute for removal. Click the &quot;Remove selected attributes&quot; button to remove the selected attributes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez l&apos;attribut à supprimer.Cliquez sur le bouton &quot;Supprimer les attributs sélectionnés&quot;pour supprimés les attributs sélectionnés.</translation>
     </message>
     <message>
         <source>Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Abaisser</translation>
     </message>
     <message>
         <source>Use the order buttons to set the order of the class attributes. The up arrow moves the attribute one place up. The down arrow moves the attribute one place down.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisez les boutons d&apos;ordre pour définir l&apos;ordre des attributs de la classe.La flèche montante, monte les attributs d&apos;une place. La flèche descendante les descends d&apos;une place.</translation>
     </message>
     <message>
         <source>Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Monter</translation>
     </message>
     <message>
         <source>Use this field to set the informal name of the attribute. This field can contain whitespaces and special characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisez ce champ pour définir le nom informel de l&apos;attribut. Le champ peut contenir des espaces et des caractères spéciaux.</translation>
     </message>
     <message>
         <source>Use this field to set the internal name of the attribute. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisez ce champ pour définir le nom interne de l&apos;attribut. L&apos;idenfiant sera utilisé dans les templates et dans le code PHP. Les caractères autorisés sont les lettres, les chiffres et les underscores.</translation>
     </message>
     <message>
         <source>Use this checkbox to specify whether the user should be forced to enter information into the attribute.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisez cette case à cocher pour indiquer à l&apos;utilisateur qu&apos;il sera obligé de renseigner cet attribut.</translation>
     </message>
     <message>
         <source>Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Obligatoire</translation>
     </message>
     <message>
         <source>Use this checkbox to specify whether the contents of the attribute should be indexed by the search engine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitlisez cette case à cocher pour indiquer que le contenu de cet attribut sera indexé par le moteur de recherche.</translation>
     </message>
     <message>
         <source>The &lt;%datatype_name&gt; datatype does not support search indexing.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;attribut &lt;%datatype_name&gt; n'est pas supporté par le script d'indexation du moteur de recherche.</translation>
     </message>
     <message>
         <source>Searchable</source>
-        <translation type="unfinished"></translation>
+        <translation>Disponible dans le moteur de recherche.</translation>
     </message>
     <message>
         <source>Use this checkbox to specify whether the attribute should collect input from users.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilisez cette case à cocher si l'attribut doit recueillir les données renseignées par les utilisateurs.</translation>
     </message>
     <message>
         <source>The &lt;%datatype_name&gt; datatype cannot be used as an information collector.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;attribut &lt;%datatype_name&gt; ne peut pas être utilisé comme collecteur d&apos;information.</translation>
     </message>
     <message>
         <source>Information collector</source>
-        <translation type="unfinished"></translation>
+        <translation>Collecteur d&apos;information</translation>
     </message>
     <message>
         <source>Use this checkbox for attributes that contain non-translatable content.</source>
