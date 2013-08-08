@@ -200,7 +200,7 @@
 {/section}
 
 {section show=$cancel_action}
-<input type="hidden" name="BrowseCancelURI" value="{$cancel_action}" />
+<input type="hidden" name="BrowseCancelURI" value="{$cancel_action|wash}" />
 {/section}
 
 {* DESIGN: Content END *}</div></div></div>
