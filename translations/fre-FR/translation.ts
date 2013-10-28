@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>The class definition was successfully stored.</source>
-       <translation>La définition de la classe a été enregistrée avec succès.</translation>
+        <translation>La définition de la classe a été enregistrée avec succès.</translation>
     </message>
     <message>
         <source>The class definition contains the following errors</source>
@@ -33,7 +33,7 @@
     </message>
     <message>
         <source>Use this field to set the informal name of the class. The name field can contain whitespaces and special characters.</source>
-         <translation>Utilisez ce champ pour définir le nom informel de la classe. Le champ Nom peut contenir des espaces et des caractères spéciaux.</translation>
+        <translation>Utilisez ce champ pour définir le nom informel de la classe. Le champ Nom peut contenir des espaces et des caractères spéciaux.</translation>
     </message>
     <message>
         <source>Identifier</source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>Use this checkbox to allow instances of the class to have sub items. If checked, it will be possible to create new sub items. If not checked, the sub items will not be displayed.</source>
-         <translation>Utilisez ce champ pour autoriser les instanciations de cette classe à contenir des sous éléments. Si la case est cochée, il sera possible de créer de nouveaux sous éléments. Si elle n&apos;est pas cochée, les sous éléments ne seront pas affichés.</translation>
+        <translation>Utilisez ce champ pour autoriser les instanciations de cette classe à contenir des sous éléments. Si la case est cochée, il sera possible de créer de nouveaux sous éléments. Si elle n&apos;est pas cochée, les sous éléments ne seront pas affichés.</translation>
     </message>
     <message>
         <source>Default sorting of children</source>
@@ -133,7 +133,7 @@
     </message>
     <message>
         <source>The &lt;%datatype_name&gt; datatype does not support search indexing.</source>
-        <translation>L&apos;attribut &lt;%datatype_name&gt; n'est pas supporté par le script d'indexation du moteur de recherche.</translation>
+        <translation>L&apos;attribut &lt;%datatype_name&gt; n&apos;est pas supporté par le script d&apos;indexation du moteur de recherche.</translation>
     </message>
     <message>
         <source>Searchable</source>
@@ -141,7 +141,7 @@
     </message>
     <message>
         <source>Use this checkbox to specify whether the attribute should collect input from users.</source>
-        <translation>Utilisez cette case à cocher si l'attribut doit recueillir les données renseignées par les utilisateurs.</translation>
+        <translation>Utilisez cette case à cocher si l&apos;attribut doit recueillir les données renseignées par les utilisateurs.</translation>
     </message>
     <message>
         <source>The &lt;%datatype_name&gt; datatype cannot be used as an information collector.</source>
@@ -260,7 +260,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nom</translation>
     </message>
     <message>
         <source>Modifier</source>
@@ -308,7 +308,7 @@
     </message>
     <message>
         <source>Identifier</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Identifiant</translation>
     </message>
     <message>
         <source>Edit the &lt;%class_name&gt; class.</source>
@@ -347,23 +347,23 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nom</translation>
     </message>
     <message>
         <source>Identifier</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Identifiant</translation>
     </message>
     <message>
         <source>Object name pattern</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attribut servant de nom à l&apos;objet (encadrer l&apos;identifiant par &lt; et &gt;)</translation>
     </message>
     <message>
         <source>URL alias name pattern</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attribut servant d&apos;URL alias à l&apos;objet (encadrer l&apos;identifiant par &lt; et &gt;)</translation>
     </message>
     <message>
         <source>Container</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Conteneur</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -387,7 +387,7 @@
     </message>
     <message>
         <source>Default sorting of children</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tri par défaut des enfants.</translation>
     </message>
     <message>
         <source>Object count</source>
@@ -534,7 +534,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nom</translation>
     </message>
     <message>
         <source>Type</source>
@@ -608,7 +608,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nom</translation>
     </message>
     <message>
         <source>FTP</source>
@@ -808,7 +808,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nom</translation>
     </message>
     <message>
         <source>Slicing mode</source>
@@ -932,7 +932,7 @@
     </message>
     <message>
         <source>Identifier</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Identifiant</translation>
     </message>
     <message>
         <source>FTP informations</source>
