@@ -1,0 +1,19 @@
+{
+    "name": "ezsystems/ezxmlexport-ls",
+    "description": "eZ Publish Legacy Extension for exporting large amounts of content for for instance pushing to static cache or backup",
+    "type": "ezpublish-legacy-extension",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "eZ Publish dev-team & eZ Community",
+            "homepage": "https://github.com/ezsystems/ezxmlexport/contributors"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ezsystems/ezpublish-legacy-installer": "*"
+    },
+    "extra": {
+        "ezpublish-legacy-extension-name": "ezxmlexport"
+    }
+}
