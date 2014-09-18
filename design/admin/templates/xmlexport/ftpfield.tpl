@@ -1,11 +1,34 @@
+{ezscript_require( 'ezjsc::yui2' )}
+{ezcss_require( 'ftprelated.css' )}
+
 <script type="text/javascript">
-    YAHOO.util.Event.addListener( "FTPTestButton", "click", testFTP );
+// Namespace
+var ezxmlexport = window.ezxmlexport || {ldelim}{rdelim};
+ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
 
-    // Namespace
-    var ezxmlexport = window.ezxmlexport || {ldelim}{rdelim};
-    ezxmlexport.serverRoot = {'/'|ezurl( 'single', 'full' )};
+(function() {ldelim}
+    YUILoader.onSuccess = function() {ldelim}
+        YAHOO.util.Event.onDOMReady( function() {ldelim}
+            YAHOO.util.Event.addListener( "FTPTestButton", "click", testFTP )
+        {rdelim} );
+    {rdelim};
+
+    YUILoader.addModule({ldelim}
+        name: 'xmlexport-classes',
+        type: 'js',
+        fullpath: '{"javascript/ezxmlexport_contentclasses.js"|ezdesign( 'no' )}',
+        requires: ["connection","yahoo-dom-event"],
+        after: ["connection","yahoo-dom-event"],
+        skinnable: false
+    {rdelim});
+
+    YUILoader.require(["xmlexport-classes"]);
+
+    // Load the files using the insert() method.
+    var options = [];
+    YUILoader.insert(options, "js");
+{rdelim})();
 </script>
-
 <div class="block">
         <label>{'FTP target'|i18n('design/admin/xmlexport')} :</label>
 {if ezini( 'FTPSettings', 'FTPShipment', 'ezxmlexport.ini' )|eq( 'enabled' )}

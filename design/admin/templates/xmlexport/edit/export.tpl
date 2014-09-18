@@ -1,3 +1,6 @@
+{ezscript_require( 'calendar.js' )}
+{ezcss_require( 'calendar.css' )}
+
 {* Warnings *}
 {if $errorMessageList}
     <div class="message-warning">
