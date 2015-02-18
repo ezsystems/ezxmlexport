@@ -105,14 +105,14 @@
     {let current_node=fetch( content, node, hash( node_id, $browse.start_node ) )}
     {section show=$browse.start_node|gt( 1 )}
         <h2 class="context-title">
-        <a href={concat( '/content/browse/', $main_node.parent_node_id, '/' )|ezurl}><img src={'back-button-16x16.gif'|ezimage} alt="{'Back'|i18n( 'design/admin/content/browse' )}" /></a>
+        <a href={concat( '/content/browse/', $main_node.parent_node_id, '/' )|ezurl}><img src={'up-16x16-grey.png'|ezimage} alt="{'Back'|i18n( 'design/admin/content/browse' )}" /></a>
         {$current_node.object.content_class.identifier|class_icon( original, $current_node.object.content_class.name|wash )}&nbsp;{$current_node.name|wash}&nbsp;[{$browse_list_count}]</h2>
     {section-else}
-    <h2 class="context-title"><img src={'back-button-16x16.gif'|ezimage} alt="Back" /> {'folder'|class_icon( small, $current_node.object.content_class.name|wash )}&nbsp;{'Top level'|i18n( 'design/admin/content/browse' )}&nbsp;[{$current_node.children_count}]</h2>
+    <h2 class="context-title"><img src={'up-16x16-grey.png'|ezimage} alt="Back" /> {'folder'|class_icon( small, $current_node.object.content_class.name|wash )}&nbsp;{'Top level'|i18n( 'design/admin/content/browse' )}&nbsp;[{$current_node.children_count}]</h2>
     {/section}
     {/let}
 {section-else}
- <h2 class="context-title"><img src={'back-button-16x16.gif'|ezimage} alt="Back" /> {'folder'|class_icon( small)}&nbsp;{'Search result'|i18n( 'design/admin/content/browse' )}&nbsp;[{$node_list|count()}]</h2>
+ <h2 class="context-title"><img src={'up-16x16-grey.png'|ezimage} alt="Back" /> {'folder'|class_icon( small)}&nbsp;{'Search result'|i18n( 'design/admin/content/browse' )}&nbsp;[{$node_list|count()}]</h2>
 
 {/section}
 {* DESIGN: Subline *}<div class="header-subline"></div>
